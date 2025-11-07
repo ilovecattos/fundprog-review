@@ -2,64 +2,28 @@
 using namespace std;
 
 int main () {
-	double finalGrade, gpa; 
+	double finalGrade, equivalent; 
+	bool loop = true;
 	
-	cout << "\nPlease enter the final grade: "; 
-	cin >> finalGrade; 
-	
-	if (finalGrade < 0 && finalGrade < 100) {
-		cout << "Invalid entry."; 
+	while (true) {
+		cout << "\nPlease enter your final grade: "; 
+		cin >> finalGrade;
+		
+		if (finalGrade >= 0.00 && finalGrade <= 69.49) equivalent = 5.00; 
+		else if (finalGrade >= 69.50 && finalGrade <= 73.49) equivalent = 3.00;
+		else if (finalGrade >= 73.50 && finalGrade <= 77.49) equivalent = 2.75; 
+		else if (finalGrade >= 77.50 && finalGrade <= 80.49) equivalent = 2.50; 
+		else if (finalGrade >= 80.50 && finalGrade <= 83.49) equivalent = 2.25; 
+		else if (finalGrade >= 83.50 && finalGrade <= 87.49) equivalent = 2.00; 
+		else if (finalGrade >= 87.50 && finalGrade <= 90.49) equivalent = 1.75; 
+		else if (finalGrade >= 90.50 && finalGrade <= 93.49) equivalent = 1.50; 
+		else if (finalGrade >= 93.50 && finalGrade <= 97.49) equivalent = 1.25; 
+		else if (finalGrade >= 97.50 && finalGrade <= 100.00) equivalent = 1.00; 
+		else {
+			cout << "Invalid entry! Program Terminating~";
+			loop = false; 
+			return 1; 
+		}
+		cout << "\nYour equivalent grade is somewhere around " << equivalent << "." << endl; 
 	}
-	else if (finalGrade >= 0.00 && finalGrade <= 60) {
-		gpa = 0.0; 
-		cout << "\nAw, better luck next time!"; 
-		cout << "\nI believe in you!"; 
-	}
-	else if (finalGrade >= 61 && finalGrade <= 63) {
-		gpa = 0.7;
-		cout << "\nOkay... small steps..."; 
-	}
-	else if (finalGrade >= 64 && finalGrade <= 66) {
-		gpa = 1.0;
-		cout << "\nJust a little more..."; 
-	}
-	else if (finalGrade >= 67 && finalGrade <= 69) {
-		gpa = 1.3; 
-		cout << "\nAt least you're trying..."; 
-	}
-	else if (finalGrade >= 70 && finalGrade <= 73) {
-		gpa = 1.7; 
-		cout << "\nJust like before, small steps..."; 
-	}
-	else if (finalGrade >= 74 && finalGrade <= 76) {
-		gpa = 2.0; 
-		cout << "\nYou're getting there!"; 
-	}
-	else if (finalGrade >= 77 && finalGrade <= 79) {
-		gpa = 2.3; 
-		cout << "\nCome on..."; 
-	}
-	else if (finalGrade >= 80 && finalGrade <= 83) {
-		gpa = 2.7; 
-		cout << "\nYou're almost there!"; 
-	}
-	else if (finalGrade >= 84 && finalGrade <= 86) {
-		gpa = 3.0; 
-		cout << "\nKeep going!"; 
-	}
-	else if (finalGrade >= 87 && finalGrade <= 89) {
-		gpa = 3.3; 
-		cout << "\nNice try!"; 
-	}
-	else if (finalGrade >= 90 && finalGrade <= 93) {
-		gpa = 3.7;
-		cout << "\nAmazing!"; 
-	}
-	else if (finalGrade >= 94 && finalGrade <= 100) {
-		gpa = 4.0;
-		cout << "\nOutstanding!"; 
-	}
-	cout << "\nThe equivalent GPA is " << gpa << ". " << endl; 
-	
-	return 0; 
 }
