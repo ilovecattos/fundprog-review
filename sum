@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int first, second;
+
+    do {
+        cout << "Enter the first integer: ";
+        cin >> first;
+        if (first <= 0)
+            cout << "Invalid input. Please enter a positive number.\n";
+    } while (first <= 0);
+
+    do {
+        cout << "Enter the second integer: ";
+        cin >> second;
+        if (second <= 0)
+            cout << "Invalid input. Please enter a positive number.\n";
+    } while (second <= 0);
+
+    int sum = 0;
+
+    for (int i = first; i <= second; i++) {
+        sum += i;
+    }
+
+    cout << "\nThe sum of all numbers from " << first << " to " 
+         << second << " is " << sum << ".";
+    
+    return 0;
+}
